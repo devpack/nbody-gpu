@@ -5,6 +5,9 @@
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
+
+#include "particle.h"
+
 #include <string>
 #include <vector>
 
@@ -13,8 +16,15 @@
 class Render
 {
 	public:
+		std::vector<Body> particles;
+
+	public:
+		Render() {}
 		Render(std::vector<glm::vec3> vertices);
 		virtual ~Render();
+
+		void Bind(std::vector<glm::vec3> vertices);
+		void Bind();
 
 		void Draw();
 	private:
