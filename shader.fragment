@@ -1,0 +1,9 @@
+#version 120
+
+varying vec3 point_color;
+
+void main()
+{
+	float col = (point_color.z + 2) / 3.0;	
+	gl_FragColor = vec4(col, col, col, 1.0);
+}
